@@ -1,11 +1,24 @@
 <template>
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
+  </nav> -->
+  <NavBarComp/>
   <router-view/>
+  <FooterComp/>
 </template>
 
+<script>
+import NavBarComp from './components/NavBarComp.vue'
+import FooterComp from './components/FooterComp.vue'
+import '@fortawesome/fontawesome-free/css/all.css';
+
+
+
+export default {
+  components: { NavBarComp, FooterComp}
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

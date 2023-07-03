@@ -18,7 +18,23 @@ const routes = [
   {
     path: '/projects',
     name: 'projects',
-    component: () => import('../components/ProjectsView.vue')
+    component: () => import('../views/ProjectsView.vue')
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/ContactView.vue')
+  },
+  {
+    path: '/testimonials',
+    name: 'testimonials',
+    component: () => import ('../views/TestimonialsView.vue')
+  },
+  {
+    path: '/testimonials/:id',
+    name: 'testimonial',
+    component:() => import ("../views/TestimonialView.vue"),
+    props:true,
   }
 ]
 

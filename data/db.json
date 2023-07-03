@@ -1,0 +1,55 @@
+{
+    "testimonials": [
+  
+    {
+        "id": 1,
+        "image": "https://i.postimg.cc/B6CcwHNN/C12-Abdoelmaaliek-Samaai-2.jpg",
+        "name": "Abdoel Samaai",
+        "occupation": "Web Developer",
+        "content": "zulaigah benjamin: she is a very quiet and friendly person. She is a fast learner and is easy to talk to. She is not a person to  make conversation first. She is also kind hearted and is a good person to have as a friend.she knows what she want and is focus."
+    },
+    {
+        "id": 2,
+        "image": "",
+        "name": "Lisa Mbuwa ",
+        "occupation": "Web Developer",
+        "content":""
+    },
+    {
+        "id": 3,
+        "image": "https://i.postimg.cc/g2TY87WH/C12-Ayesha-Galant-Class1-1.jpg",
+        "name": "Ayesha Galant ",
+        "occupation": "Web Developer",
+        "content": "Zulaigah is dedicated and very passionate about her work. Working together makes me motivated to go above and beyond to reach our goals and of course, having fun while doing so"
+    },
+    {
+        "id": 4,
+        "image": "https://i.postimg.cc/Y9VgPRY6/Waydin-Jochem-C12-C1-25-Apr23-2.jpg",
+        "name": "Waydin Jochem ",
+        "occupation": "Web Developer",
+        "content": "Although shes quite shes always offering help and always has a smile on her face"
+    },
+    {
+        "id": 5,
+        "image": "",
+        "name": "Inam Nkabi ",
+        "occupation": "Web Developer",
+        "content": "Working with Zuaigah is a pleasure.He is good at seeing the big picture in both the areas of database design and data definition. She ability to asses a situation from all angles and see the myriad of potential ramifications of a particular course of action was very helpful. And always lends a helping hand where needed"
+    },
+    {
+        "id": 6,
+        "image": "https://i.postimg.cc/J73PStRH/IMG-2239-1.jpg",
+        "name": "Ridhaa Gabier ",
+        "occupation": "Web Developer",
+        "content": "Zulaigah is a very hardworking and dedicated person. He doesn't give up as easy as everyone else. Every goal that he has set for himself, he has achieved. His not stopping till he reaches the top. He is a motivation to everyone around him, and his personality makes others not  give up and and reach their full potential"
+    },
+   
+    {
+        "id": 7,
+        "image": "https://i.postimg.cc/XJXz4LJH/C12-C-1-Lyle-Brown-2.jpg",
+        "name": "Lyle Brown",
+        "occupation": "Web Developer",
+        "content": ""
+    }
+    ]
+}
