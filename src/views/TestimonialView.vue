@@ -16,11 +16,14 @@
         <p>{{ testimonial.content }}</p>
     </slide>
     </carousel>
+    <TestimonialCarousel/>
   </template>
 
 
   <script>
+  
   export default {
+    components: { TestimonialCarousel},
       props: ['id'],
     //   data() {
     //     return {
@@ -47,6 +50,7 @@
   <style>
   .testimonial-details {
     display:grid;
+    grid-template-columns: repeat(1, 1fr);
    
   }
   </style>

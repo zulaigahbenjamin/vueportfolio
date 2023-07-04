@@ -21,8 +21,10 @@
   <script>
   
   import CardComp from '@/components/CardComp.vue'
+ 
+
   export default {
-    components: { CardComp },
+    components: { CardComp,},
     
     // data() {
     //   return {
@@ -37,6 +39,12 @@
     mounted() {
       this.$store.dispatch('getTestimonials')
     },
+
+
+
+
+  
+
     // methods: {
     //   fetchTestimonials() {
     //     // Fetch testimonials from the JSON file
@@ -53,9 +61,9 @@
   }
   </script>
   <style scoped>
-.flex-container {
-  display:grid;
-  grid-template-columns:  (2,1fr);
-}
+/* .flex-container {
+ display:flex;
+ flex-direction:unset;
+} */
 </style>
   

@@ -1,117 +1,78 @@
 <template>
+  <h1>Welcome to my web developer portfolio!</h1>
   <section class="about-section">
     <div class="pic">
-      <img src="https://i.postimg.cc/6qmwS691/IMG-2409-3.jpg" alt="image of myself" />
+      <img
+        src="https://i.postimg.cc/6qmwS691/IMG-2409-3.jpg"
+        alt="image of myself"
+      />
     </div>
     <div class="more-info">
       <p>
-        ihwrt03 4htirq3u3i4hthqwrifhqrrhtoqhtut09ueerrfhhbdiuhao4ht3q4uth
+        I'm passionate about creating engaging and user-friendly websites that
+        leave a lasting impression. With a keen eye for design and a knack for
+        problem-solving, I strive to bring my clients' visions to life through
+        elegant and functional web solutions.
       </p>
-    </div>
-  </section>
-
-  <!-- <div class="testimonial-carousel">
-    <div class="carousel-container">
-      <div v-for="(testimonial, index) in testimonials" :key="index" :class="{ active: index === activeIndex }"
-        class="testimonial-slide">
-        <div class="testimonial-content">
-          <p>{{ testimonial.message }}</p>
-          <p class="testimonial-author">{{ testimonial.author }}</p>
-        </div>
+      <div>
+        <p>
+          Beyond my love for coding and web development, I find solace in the
+          world of books. I enjoy immersing myself in different genres and
+          expanding my knowledge through reading. It fuels my creativity and
+          keeps me inspired to explore new ideas and techniques in my work.
+        </p>
+        <p>
+          Connecting with friends and fellow developers is something I truly
+          cherish. I value collaboration and believe in the power of sharing
+          knowledge and experiences. Working together and exchanging ideas not
+          only improves my skills but also creates a supportive community where
+          we can learn and grow together.
+        </p>
+        <p>
+          While I thrive on social interaction, there are times when I
+          appreciate solitude and introspection. Being an introvert, I find
+          solace in moments of quiet reflection. These moments allow me to
+          recharge and approach challenges with a fresh perspective.
+        </p>
+        <p>
+          I invite you to explore my portfolio and discover the projects that
+          showcase my dedication, creativity, and technical expertise. If you
+          have any questions or would like to discuss potential collaborations,
+          feel free to reach out. I look forward to connecting with you!
+        </p>
+        <p>Thank you for visiting!</p>
+        <p>Zulaigah</p>
       </div>
     </div>
-    <div class="carousel-controls">
-      <button @click="prevSlide" class="carousel-control-prev">Prev</button>
-      <button @click="nextSlide" class="carousel-control-next">Next</button>
-    </div>
-  </div> -->
+  </section>
+  <div class="container">
+ 
+  </div>
 </template>
 <script>
-export default {
-  // data() {
-  //   return {
-  //     activeIndex: 0,
-  //     testimonials: []
-  //   }
-  // },
-  // methods: {
-  //   prevSlide() {
-  //     this.activeIndex = (this.activeIndex === 0) ? this.testimonials.length - 1 : this.activeIndex - 1;
-  //   },
-  //   nextSlide() {
-  //     this.activeIndex = (this.activeIndex === this.testimonials.length - 1) ? 0 : this.activeIndex + 1;
-  //   }
-  }
-
+export default {};
 </script>
 <style scoped>
+.container {
+  background-color:#f5f5f5;
+  height: 90px;
+}
 .about-section {
   display: flex;
-  margin-top:80px;
-    
 }
 .pic {
-margin-left: 10%;
+  margin-left: 5%;
 }
 .more-info {
-  margin-left:10%;
+  margin-left: 5%;
+  text-align: left;
+  margin-bottom:20px;
 }
 img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 300px;
   border-radius: 5%;
   object-fit: cover;
   margin-top: 20px;
 }
-
-/* .testimonial-carousel {
-  text-align: center;
-}
-
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  overflow: hidden;
-}
-
-.testimonial-slide {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-
-.testimonial-slide.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.testimonial-content {
-  padding: 20px;
-}
-
-.carousel-controls {
-  margin-top: 10px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  border: none;
-  background-color: #333;
-  color: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.carousel-control-prev {
-  margin-right: 10px;
-}
-
-.carousel-control-next:hover,
-.carousel-control-prev:hover {
-  background-color: #555;
-}*/
-</style>  
-
-
+</style>

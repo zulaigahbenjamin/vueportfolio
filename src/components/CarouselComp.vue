@@ -18,9 +18,7 @@
   export default defineComponent({
     name: 'Autoplay',
     components: {
-      Carousel,
-      Slide,
-      Pagination,
+      CardComp
     },
   })
   </script>

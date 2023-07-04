@@ -1,13 +1,14 @@
 <template>
     <nav>
+      
       <ul>
+        
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/about">About </router-link></li>
         <li><router-link to="/testimonials">Testimonials</router-link></li>
         <li><router-link to="/projects">Projects</router-link></li>
         <li><router-link to="/contact">Contact </router-link></li> 
        <li><button @click="goToContactPage">Hire Me</button></li>
-       
       </ul>
     </nav>
   </template>
@@ -37,6 +38,9 @@
     justify-content: center;
     display:flex;
   }
+  li:hover {
+    color:blue;
+  }
   
   li {
     margin-right: 10px;
@@ -47,7 +51,7 @@
     text-decoration: none;
   }
   
-  :router-link:hover {
+  router-link:hover {
     text-decoration: underline;
     color: rgb(0, 0, 0);
     padding:10px;

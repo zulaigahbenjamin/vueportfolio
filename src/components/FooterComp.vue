@@ -1,16 +1,18 @@
 <template>
     <footer>
       <div class="footer-container">
-        <p>&copy; 2023 Zulaigah Benjamin</p>
+        <p>&copy; 2023 
+          <a href="https://github.com/zulaigahbenjamin/vueportfolio.git">Vue.js Portfolio.</a>
+         Developed by Zulaigah Benjamin</p>
         <div class="social-icons">
           <a href="https://github.com/yourusername" class="sl" target="_blank">
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github fa-lg"></i>
           </a>
           <a href="https://linkedin.com/in/yourusername" class="sl" target="_blank">
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin fa-lg"></i>
           </a>
           <a href="https://twitter.com/yourusername" class="sl" target="_blank">
-            <i class="fab fa-twitter"></i>
+            <i class="fab fa-twitter fa-lg"></i>
           </a>
         </div>
       </div>
@@ -27,7 +29,8 @@
   }
   .sl {
     padding-left:20px;
-    width:20%;
+    width:50px;
+    height:-500px;
 
   }
   .footer-container {
@@ -51,6 +54,13 @@
   
   .social-icons a:hover {
     color: #ccc;
+  }
+  a {
+    color:white;
+
+  }
+  a:hover {
+    color:pink;
   }
   </style>
   
