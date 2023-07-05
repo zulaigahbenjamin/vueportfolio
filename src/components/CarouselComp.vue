@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <Carousel :itemsToShow="3.95" :wrapAround="true" :transition="500">
       <Slide v-for="slide in 10" :key="slide">
         <div class="carousel__item">{{ slide }}</div>
@@ -10,7 +10,7 @@
   </template>
   
   <script>
-  import { defineComponent } from 'vue'
+  
   import CardComp from "@/components/CardComp.vue"
   
   import 'vue3-carousel/dist/carousel.css'
@@ -63,5 +63,32 @@
     opacity: 1;
     transform: rotateY(0) scale(1.1);
   }
-  </style>
+  </style> -->
+  <template>
+    <router-link :to="{name: 'testimonials', 
+    params:{id: testimonial.id}}">
+        <img :src="testimonial.image"/>
+        <h3>{{ testimonial.description }}</h3>
+        <p>{{ testimonial.github-link }}</p>
+        <p>{{ testimonial.netlify-link }}</p>
+    </router-link>
+</template>
+<script>
+export default {
+    props: ["testimonial"],
+    methods: {
+        logger(){
+            requestAnimationFrame(this.logger)
+            console.log(this.testimonial);
+        },
+    },
+    mounted() {
+        // this.logger()
+    },
+   
+}
+</script>
+<style scoped>
+
+</style>
   

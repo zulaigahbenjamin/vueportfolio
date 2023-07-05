@@ -24,7 +24,7 @@
  
 
   export default {
-    components: { CardComp,},
+    components: { CardComp},
     
     // data() {
     //   return {

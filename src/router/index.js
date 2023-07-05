@@ -20,6 +20,7 @@ const routes = [
     name: 'projects',
     component: () => import('../views/ProjectsView.vue')
   },
+ 
   {
     path: '/contact',
     name: 'contact',
@@ -36,6 +37,11 @@ const routes = [
     name: 'testimonial',
     component:() => import ("../views/TestimonialView.vue"),
     props:true,
+  },
+  {
+    path: '/resume',
+    name: 'ResumePage',
+    component: () => import('../views/ResumeView.vue')
   }
 ]
 

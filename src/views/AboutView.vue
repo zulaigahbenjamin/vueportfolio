@@ -2,10 +2,7 @@
   <h1>Welcome to my web developer portfolio!</h1>
   <section class="about-section">
     <div class="pic">
-      <img
-        src="https://i.postimg.cc/6qmwS691/IMG-2409-3.jpg"
-        alt="image of myself"
-      />
+      <img src="https://i.postimg.cc/6qmwS691/IMG-2409-3.jpg" alt="image of myself" />
     </div>
     <div class="more-info">
       <p>
@@ -43,36 +40,156 @@
         <p>Thank you for visiting!</p>
         <p>Zulaigah</p>
       </div>
+      
+
     </div>
+   
   </section>
-  <div class="container">
- 
+ <button @click="goToResumePage" class="resume">Check My Resume Out !</button>
+  <div class="containers">
+    <div class="wrapper">
+      <div class="container" v-for="(value, key) in currentValues" :key="key"><br>
+        <span class="num">{{ value }}</span>
+        <span class="text"><br><br>{{ getText(key, value) }}</span><br />
+      </div>
+    </div>
   </div>
+  <main>
+    <div class="brands">
+      <h1>Brands I've Worked With</h1>
+      <img class="pic" src="https://i.postimg.cc/655LFW0R/life-choices.png">
+    </div>
+  </main>
 </template>
+
 <script>
-export default {};
+export default {
+  methods: {
+    goToResumePage() {
+      this.$router.push('/resume');
+    }
+  },
+
+
+  data() {
+    return {
+      currentValues: {
+        experience: 0,
+        projectsCompleted: 0,
+        positiveFeedback: 0,
+      },
+      endValues: {
+        experience: 1,
+        projectsCompleted: 20,
+        positiveFeedback: 80,
+      },
+
+    };
+  },
+  mounted() {
+    this.animateValueDisplays();
+  },
+  methods: {
+    animateValueDisplays() {
+      Object.keys(this.endValues).forEach((key) => {
+        const endValue = this.endValues[key];
+        const duration = Math.floor(this.interval / endValue);
+        let startValue = 0;
+
+        const counter = setInterval(() => {
+          startValue += 1;
+          this.currentValues[key] = startValue;
+
+          if (startValue === endValue) {
+            clearInterval(counter);
+          }
+        }, duration);
+      });
+    },
+    getText(key, value) {
+      // Map the key to the corresponding text
+      const texts = {
+        experience: "Experience",
+        projectsCompleted: "Projects Completed",
+        positiveFeedback: "Positive Feedback",
+      }
+
+      if (key === "value") {
+        return value + "%";
+      }
+
+      return texts[key];
+    },
+    
+
+  }
+  }
 </script>
+
+
+
+
+
+
+
+
 <style scoped>
-.container {
-  background-color:#f5f5f5;
-  height: 90px;
+.pic {
+  width: 500px;
+  height: 400px;
+  margin-bottom: 50px;
 }
+
+.containers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.wrapper {
+  display: flex;
+}
+
+.container {
+  margin: 10px;
+  text-align: center;
+  font-size: larger;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-left: 80px;
+}
+
+.num {
+  display: grid;
+}
+
+.text {
+  display: flex;
+}
+
+.containers {
+  background-color: #f5f5f5;
+  height: 100%;
+}
+
 .about-section {
   display: flex;
 }
+
 .pic {
   margin-left: 5%;
 }
+
 .more-info {
   margin-left: 5%;
   text-align: left;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
+
 img {
   width: 250px;
   height: 300px;
   border-radius: 5%;
   object-fit: cover;
   margin-top: 20px;
-}
-</style>
+}</style>

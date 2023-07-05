@@ -8,17 +8,21 @@
         <li><router-link to="/testimonials">Testimonials</router-link></li>
         <li><router-link to="/projects">Projects</router-link></li>
         <li><router-link to="/contact">Contact </router-link></li> 
-       <li><button @click="goToContactPage">Hire Me</button></li>
+       <li><button @click="goToContactPage" class="hire-me">Hire Me</button></li>
       </ul>
     </nav>
   </template>
   
   <style scoped>
-  button {
+  .hire-me{
     background-color:rgba(162, 162, 233, 0.582);
     color:rgb(0, 0, 0); 
     border-radius: 5px;
-    padding:8px; 
+    padding:8px;
+    /* margin-left: 80px;  */
+    float:right;
+    
+    margin-top: 0;
 
   }
   nav {

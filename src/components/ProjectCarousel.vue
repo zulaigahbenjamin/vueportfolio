@@ -1,4 +1,4 @@
- <template>
+ <!-- <template>
   <div class="carousel">
     <div class="carousel-container" :style="carouselStyle">
       <div
@@ -8,7 +8,7 @@
         :style="slideStyle(index)"
       >
        Content for each carousel slide
-        <h3>{{ item.title }}</h3>
+        <h3>{{ item.image }}</h3>
         <p>{{ item.description }}</p>
       </div>
     </div>
@@ -17,6 +17,12 @@
       <button @click="nextSlide" class="carousel-nav-button">Next</button>
     </div>
   </div>
+  <router-link :to="{name: 'projects', params:{id:project.id}}">
+  <img :src="project.image">
+  <h2>{{ project.description }}</h2>
+  <p>{{ project.github-link }}</p>
+  <p>{{ firebase-link }}</p>
+  </router-link>
 </template>
 
 <style scoped>
@@ -88,17 +94,18 @@
       <button @click="nextSlide" class="carousel-nav-button">Next</button>
     </div>
   </div>
-</template>
+</template> 
 
 <script>
 export default {
+  props: ['projects'],
   data() {
     return {
       items: [
-        { title: 'Slide 1', 
+        { image: 'https://i.postimg.cc/25PLP53k/IMG-2409-3.jpg', 
         description: 'Description for Slide 1' 
       },
-        { title: 'Slide 2', 
+        { image: 'https://i.postimg.cc/25PLP53k/IMG-2409-3.jpg', 
         description: 'Description for Slide 2' 
       },
         // Add more carousel items as needed
@@ -127,7 +134,60 @@ export default {
       const slideRotation = (index - this.currentIndex) * 60;
       return `transform: rotateY(${slideRotation}deg) translateZ(${this.translateZ}px);`;
     },
+    logger(){
+      requestAnimationFrame(this.logger)
+      console(this.project);
+    }
   },
+  mounted (){
+    //this.logger
+  }
 };
 </script>
+ -->
+ <!-- <template>
+  <router-link :to="{name: 'projects', 
+  params:{id:project.id}}">
+      <img :src="project.image"/>
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.occupation }}</p>
+      <p>{{ project.content }}</p>
+  </router-link>
+</template>
+<script>
+export default {
+  props: ["project"],
+  methods: {
+      logger(){
+          requestAnimationFrame(this.logger)
+          console.log(this.project);
+      },
+  },
+  mounted() {
+      // this.logger()
+  },
+}
+</script>
+<style scoped>
 
+</style> -->
+
+<template>
+  <div class="container">
+        <div class="card" v-for="project in projects" :key="project.id">
+            <div class="card-body">
+                <h2>{{ projects.name }}</h2>
+                <img :src="projects.imageUrl" :alt="projects.name">
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+  props: ["testimonial"],
+
+}
+</script>
+<style scoped>
+
+</style>

@@ -51,5 +51,59 @@
         "occupation": "Web Developer",
         "content": ""
     }
+    ],
+
+  "projects" : [
+        {
+            "id": 1,
+            "image": "https://i.postimg.cc/W3s4rqcX/Screenshot-2023-05-12-121909.png",
+            "description": "",
+            "github-link": "",
+            "netlify-link": "https://phenomenal-naiad-796d07.netlify.app/"
+        },
+        {
+            "id": 2,
+            "image": "",
+            "description": "",
+            "github-link": "",
+            "netlify-link": ""
+        },
+        {
+            "id": 3,
+            "image": "",
+            "description": "",
+            "github-link": "",
+            "netlify-link": ""
+        },
+        {
+            "id": 4,
+            "image": "",
+            "description": "",
+            "github-link": "",
+            "netlify-link": ""
+        },
+        {
+            "id": 5,
+            "image": "",
+            "description": "",
+            "github-link": "",
+            "netlify-link": ""
+        },
+        {
+            "id": 6,
+            "image": "",
+            "description": "",
+            "github-link": "",
+            "netlify-link": ""
+        },
+        {
+            "id": 7,
+            "image": "",
+            "description": "",
+            "github-link": "",
+            "netlify-link": ""
+        }
     ]
 }
+
+  

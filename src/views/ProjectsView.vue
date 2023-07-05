@@ -1,45 +1,39 @@
- <template>
-    <div class="projects">
+ <!-- <template>
+     <div class="projects">
       <h2>Projects</h2>
-      <Carousel :navigation-enabled="true" :navigation-next-label="'Next'" :navigation-prev-label="'Previous'">
-        <div v-for="project in projects" :key="project.name">
-          <h3>{{ project.name }}</h3>
-          <p>{{ project.description }}</p>
-          <p>Technologies Used: {{ project.technologies }}</p>
-        </div>
+      <div v-if="projects" class="flex-container">
+        <Carousel v-for="project of projects" :key="project.id" :project="project" >
+         
+          <div v-else>Loading...</div>
       </Carousel>
+      </div>
+    </div> 
+    <div v-if="projects" class="flex-container">
+      <Carousel v-for="project of projects" :key="project.id" :project="project"/>
     </div>
+    <div v-else>Loading...</div>
   </template>
   
   <script>
-  import Carousel from '@/components/ProjectCarousel.vue';
+  import ProjectCarousel from '@/components/ProjectCarousel.vue';
   
   export default {
     components: {
-      Carousel,
+      ProjectCarousel,
     },
     data() {
       return {
-        projects: [
-          {
-            name: 'Project 1',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            technologies: 'HTML, CSS, JavaScript',
-          },
-          {
-            ame: 'Project 2',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            technologies: 'HTML, CSS, JavaScript',
-          },
-        {
-            ame: 'Project 3',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            technologies: 'HTML, CSS, JavaScript',
-        }
-          // Add more projects as needed
-        ],
+        projects: [],
       };
     },
+    computed : {
+      projects() {
+        return this.$store.state.projects
+      }
+    },
+    mounted() {
+      this.$store.dispatch('getProjects')
+    }
   };
   </script>
   
@@ -47,7 +41,7 @@
   /* .carousel {
     /* Your custom styles 
   } */
-  </style>
+  </style> -->
 
 
   <!-- <template>
@@ -98,4 +92,30 @@
   };
   </script> -->
   
-  
+<template>
+  <div v-if="projects">
+    <ProjectCarousel :project="projects" />
+  </div>
+  <div v-else>loading...projects not ready</div>
+</template>
+<script>
+import ProjectCarousel from '../components/ProjectCarousel.vue'
+export default {
+  computed: {
+    projects() {
+      return this.$store.state.project
+    }
+  },
+  mounted() {
+    this.$store.dispatch('getProjects');
+  },
+  components: { ProjectCarousel }
+}
+</script>
+<style scoped>
+img {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+}
+</style>
