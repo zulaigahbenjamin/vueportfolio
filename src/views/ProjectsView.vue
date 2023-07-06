@@ -1,121 +1,95 @@
- <!-- <template>
-     <div class="projects">
-      <h2>Projects</h2>
-      <div v-if="projects" class="flex-container">
-        <Carousel v-for="project of projects" :key="project.id" :project="project" >
-         
-          <div v-else>Loading...</div>
-      </Carousel>
-      </div>
-    </div> 
-    <div v-if="projects" class="flex-container">
-      <Carousel v-for="project of projects" :key="project.id" :project="project"/>
-    </div>
-    <div v-else>Loading...</div>
-  </template>
-  
-  <script>
-  import ProjectCarousel from '@/components/ProjectCarousel.vue';
-  
-  export default {
-    components: {
-      ProjectCarousel,
-    },
-    data() {
-      return {
-        projects: [],
-      };
-    },
-    computed : {
-      projects() {
-        return this.$store.state.projects
-      }
-    },
-    mounted() {
-      this.$store.dispatch('getProjects')
-    }
-  };
-  </script>
-  
-  <style scoped>
-  /* .carousel {
-    /* Your custom styles 
-  } */
-  </style> -->
-
-
-  <!-- <template>
-    <div>
-     
-  
-      <Carousel :items="carouselItems" />
-    </div>
-  </template>
-  
-  <script>
-  import Carousel from '../components/ProjectCarousel.vue';
-  
-  export default {
-    components: {
-      Carousel,
-    },
-    data() {
-      return {
-        carouselItems: [
-          {
-            title: 'https://i.postimg.cc/05HLkgR1/IMG-2409.jpg',
-            description: 'Description for Slide 1',
-          },
-          {
-            image:'https://i.postimg.cc/05HLkgR1/IMG-2409.jpg',
-            description: 'Description for Slide 2',
-          },
-          // Add more carousel items as needed
-        ],
-      };
-    },
-  };
-  </script> 
-
- <template>
-    <div id="example">
-      <carousel-3d :controls-visible="true" :clickable="false">
-      </carousel-3d>
-    </div>
-  </template>
-  
-  <script>
-   import ProjectCarousel from '../components/ProjectCarousel.vue'
-  
-  export default {
-    components: { ProjectCarousel}
-  };
-  </script> -->
-  
 <template>
-  <div v-if="projects">
-    <ProjectCarousel :project="projects" />
+  <div class="container">
+    <div class="card" v-for="project in projects" :key="project.id">
+      <div class="box-3">
+        <div class="btn btn-three">
+          <div class="card-body">
+            <h2>{{ project.name }}</h2>
+            <img :src="project.image" :alt="project.name">
+            <p>{{ project.description }}</p>
+            <p>{{ project.github - link }}</p>
+            <p>{{ project.netlify - link }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div v-else>loading...projects not ready</div>
 </template>
+
 <script>
-import ProjectCarousel from '../components/ProjectCarousel.vue'
 export default {
   computed: {
     projects() {
-      return this.$store.state.project
-    }
+      return this.$store.state.projects;
+    },
   },
   mounted() {
-    this.$store.dispatch('getProjects');
+    this.$store.dispatch('fetchProjects');
   },
-  components: { ProjectCarousel }
-}
+};
 </script>
+
 <style scoped>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
 img {
-  width: 70px;
-  height: 70px;
-  border-radius: 70px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+}
+.btn-three {
+  color: #363333;
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-three::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(122, 115, 115, 0.1);
+  transition: all 0.3s;
+}
+
+.btn-three:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.btn-three::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(138, 69, 69, 0.5);
+  transform: scale(1.2, 1.2);
+}
+
+.btn-three:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
 }
 </style>

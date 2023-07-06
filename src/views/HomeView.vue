@@ -1,48 +1,93 @@
-<template>
-  <div class="home-page">
-    <div class="container">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Passionate web developer creating user-friendly and engaging websites.</p>
-      <router-link to="/about" class="btn">Check Me Out !</router-link>
-    </div>
+<!-- <template>
+  <div>
+    <h1 class="typewriter">{{ message }}</h1>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      message: '',
+      index: 0,
+      speed: 100, // Speed in milliseconds
+      text: 'Welcome to my portfolio'
+    };
+  },
+  mounted() {
+    this.typeWriter();
+  },
+  methods: {
+    typeWriter() {
+      if (this.index < this.text.length) {
+        this.message += this.text.charAt(this.index);
+        this.index++;
+        setTimeout(this.typeWriter, this.speed);
+      }
+    }
+  }
+};
+</script>
+
 <style scoped>
-.home-page {
-  padding-top:30px;
-   height: 100vh;
- /* display: flex; */
-  background-color: #f5f5f5;
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+  color:black;
+  
 }
 
-.container {
-  text-align: center;
-  justify-content: center;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #000;
+  }
+}
+</style> -->
+
+<template>
+  <div>
+    <h1 class="slide-in">{{ message }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: 'Welcome to my portfolio'
+    };
+  }
+};
+</script>
+
+<style scoped>
+.slide-in {
+  animation: slideIn 1s forwards;
+  opacity: 0;
 }
 
-p {
-  font-size: 1.5rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.btn {
-  padding: 1rem 2rem;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #555;
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 </style>
+

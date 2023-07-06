@@ -1,6 +1,10 @@
 <template>
-  <h1>Welcome to my web developer portfolio!</h1>
+ <div>
+    <h1 class="slide-in">{{ message }}</h1>
+  </div>
+  <!-- <h1>Welcome to my web developer portfolio!</h1> -->
   <section class="about-section">
+    
     <div class="pic">
       <img src="https://i.postimg.cc/6qmwS691/IMG-2409-3.jpg" alt="image of myself" />
     </div>
@@ -45,6 +49,7 @@
     </div>
    
   </section>
+  
  <button @click="goToResumePage" class="resume">Check My Resume Out !</button>
   <div class="containers">
     <div class="wrapper">
@@ -69,10 +74,9 @@ export default {
       this.$router.push('/resume');
     }
   },
-
-
   data() {
     return {
+      message: 'Welcome to my web developer portfolio!',
       currentValues: {
         experience: 0,
         projectsCompleted: 0,
@@ -120,8 +124,6 @@ export default {
 
       return texts[key];
     },
-    
-
   }
   }
 </script>
@@ -134,10 +136,29 @@ export default {
 
 
 <style scoped>
+.slide-in {
+  animation: slideIn 1s forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .pic {
   width: 500px;
   height: 400px;
   margin-bottom: 50px;
+}
+button {
+  width: 200px;
+  height:50px;
+  margin:20px;
 }
 
 .containers {
@@ -174,6 +195,7 @@ export default {
 
 .about-section {
   display: flex;
+  background-color: #f5f5f5;
 }
 
 .pic {

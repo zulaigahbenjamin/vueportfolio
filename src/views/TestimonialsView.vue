@@ -26,11 +26,6 @@
   export default {
     components: { CardComp},
     
-    // data() {
-    //   return {
-    //     testimonials: []
-    //   }
-    // },
     computed : {
       testimonials() {
         return this.$store.state.testimonials
@@ -39,31 +34,20 @@
     mounted() {
       this.$store.dispatch('getTestimonials')
     },
-
-
-
-
-  
-
-    // methods: {
-    //   fetchTestimonials() {
-    //     // Fetch testimonials from the JSON file
-    //     fetch('https://zulaigahbenjamin.github.io/jsonfile/data.json')
-    //       .then(response => response.json())
-    //       .then(data => {
-    //         this.testimonials = data
-    //       })
-    //       .catch(error => {
-    //         console.error('Error fetching testimonials:', error)
-    //       })
-    //   }
-    // }
   }
   </script>
   <style scoped>
-/* .flex-container {
- display:flex;
- flex-direction:unset;
-} */
+.flex-container {
+display:grid;
+grid-template-columns: repeat(2,1fr);
+
+
+}
+.pic {
+  width: 50px;
+}
+template{
+  text-decoration: none;
+}
 </style>
   
